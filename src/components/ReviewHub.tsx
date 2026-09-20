@@ -1,4 +1,4 @@
-import { Search, SlidersHorizontal, Plus } from 'lucide-react';
+import { Search, SlidersHorizontal, Plus, Star } from 'lucide-react';
 import { useReviewStore } from '../hooks/useReviewStore';
 import { Review } from '../types';
 import CafeHeader from './CafeHeader';
@@ -10,6 +10,8 @@ interface Props {
 
 export default function ReviewHub({ onStartReview, onEditReview }: Props) {
   const { reviews } = useReviewStore();
+
+  const fallbackImage = 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop';
 
   return (
     <div className="space-y-6">
@@ -23,34 +25,51 @@ export default function ReviewHub({ onStartReview, onEditReview }: Props) {
       </header>
 
       <section>
-        <h2 className="text-lg font-semibold mb-2">งานรีวิว</h2>
-        <div className="flex gap-2 mb-4">
+        <div className="flex gap-2">
           <div className="relative flex-grow">
             <Search className="absolute left-3 top-2.5 w-4 h-4 text-text-secondary" />
             <input 
               type="text" 
-              placeholder="ค้นหาสถานที่หรือชื่อรีวิว" 
-              className="w-full bg-bg-card border border-border-card rounded-lg py-2 pl-10 pr-4 text-sm"
+              placeholder="ค้นหารีวิว..." 
+              className="w-full bg-bg-card border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-action-primary transition-colors"
             />
           </div>
-          <button className="bg-bg-card border border-border-card p-2 rounded-lg">
-            <SlidersHorizontal className="w-5 h-5" />
-          </button>
         </div>
       </section>
 
-      <div className="space-y-4">
+      <div className="space-y-6">
         {reviews.map(review => (
-          <button 
+          <div 
             key={review.id} 
-            onClick={() => onEditReview(review)}
-            className="w-full text-left bg-bg-card p-4 rounded-xl border border-border-card"
+            className="group bg-bg-app rounded-3xl border border-white/10 shadow-[8px_8px_16px_rgba(0,0,0,0.4),-8px_-8px_16px_rgba(255,255,255,0.03)] overflow-hidden transition-all duration-300 hover:scale-[1.02]"
           >
-             <div className="h-40 bg-gray-700 rounded-lg mb-3"></div>
-             <h3 className="font-semibold">{review.locationName}</h3>
-             <p className="text-sm text-text-secondary">{review.angle}</p>
-             <p className="text-xs text-text-secondary mt-2">สถานะ: {review.platforms.Instagram.status}</p>
-          </button>
+             <div className="h-40 w-full overflow-hidden">
+               <img 
+                 src={review.images.length > 0 ? review.images[review.coverImageIndex] : fallbackImage} 
+                 alt={review.locationName} 
+                 className="w-full h-full object-cover"
+               />
+             </div>
+             <div className="p-5 space-y-3">
+               <div className="flex justify-between items-start">
+                 <h3 className="font-bold text-lg text-white">{review.locationName}</h3>
+                 <span className="text-xs bg-action-primary/20 text-action-primary px-2 py-1 rounded-full">{review.locationType}</span>
+               </div>
+               
+               <div className="flex items-center text-action-primary">
+                 {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-current" />)}
+               </div>
+
+               <p className="text-sm text-text-secondary line-clamp-2 italic">"{review.experience}"</p>
+               
+               <button 
+                onClick={() => onEditReview(review)}
+                className="w-full bg-white/5 border border-white/10 text-white text-sm font-semibold py-2 rounded-full hover:bg-action-primary/20 hover:border-action-primary transition-all duration-300"
+              >
+                 ดูรายละเอียด
+               </button>
+             </div>
+          </div>
         ))}
       </div>
 
