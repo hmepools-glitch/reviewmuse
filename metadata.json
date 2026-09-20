@@ -1,0 +1,6 @@
+{
+  "name": "ReviewMuse",
+  "description": "ผู้ช่วยเตรียมคอนเทนต์รีวิวสำหรับ Creator ช่วยเลือกมุมเล่า ร่าง Caption และเก็บประวัติงานรีวิว",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

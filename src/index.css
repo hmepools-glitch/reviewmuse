@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-app: #0B0E17;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-border-card: rgba(255, 255, 255, 0.1);
+  --color-text-primary: #F4F4EF;
+  --color-text-secondary: #B0B9B7;
+  --color-action-primary: #FF7B39;
+  --color-action-secondary: #8A2BE2;
+  --color-action-text: #101616;
+}
+
+body {
+  background: radial-gradient(circle at top right, #1a1a3a, #0B0E17);
+  color: var(--color-text-primary);
+  font-family: 'Noto Sans Thai', sans-serif;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
