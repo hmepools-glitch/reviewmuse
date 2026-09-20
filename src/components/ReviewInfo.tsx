@@ -42,7 +42,7 @@ export default function ReviewInfo({ activeReview, onBack, onNext }: Props) {
 
       <button 
         onClick={() => onNext({ locationName: name, experience })}
-        className="w-full bg-action-primary text-action-text font-semibold py-3 rounded-xl"
+        className="w-full bg-action-primary text-action-text font-semibold py-3 rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-neon-primary hover:shadow-neon-primary-hover border border-white/20"
       >
         ไปเลือกมุมเล่า
       </button>

@@ -24,7 +24,7 @@ export default function CaptionEditor({ activeReview, onBack, onDone }: Props) {
         className="w-full h-40 bg-bg-card border border-border-card rounded-lg p-3 text-text-primary"
       />
       
-      <button className="w-full bg-action-primary text-action-text font-semibold py-3 rounded-xl">
+      <button className="w-full bg-action-primary text-action-text font-semibold py-3 rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-neon-primary hover:shadow-neon-primary-hover border border-white/20">
         คัดลอก Caption
       </button>
     </div>

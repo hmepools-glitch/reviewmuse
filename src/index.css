@@ -7,8 +7,13 @@
   --color-text-primary: #F4F4EF;
   --color-text-secondary: #B0B9B7;
   --color-action-primary: #FF7B39;
-  --color-action-secondary: #8A2BE2;
+  --color-action-secondary: #A855F7;
   --color-action-text: #101616;
+  
+  /* Neon Shadows */
+  --shadow-neon-primary: 0 0 20px rgba(255, 123, 57, 0.6), 0 0 40px rgba(255, 123, 57, 0.25);
+  --shadow-neon-primary-hover: 0 0 30px rgba(255, 123, 57, 0.8), 0 0 60px rgba(255, 123, 57, 0.4);
+  --shadow-neon-secondary: 0 0 18px rgba(168, 85, 247, 0.55);
 }
 
 body {

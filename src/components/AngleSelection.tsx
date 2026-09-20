@@ -21,7 +21,7 @@ export default function AngleSelection({ activeReview, onBack, onSelect }: Props
           <button 
             key={angle}
             onClick={() => onSelect(angle)}
-            className="w-full text-left bg-bg-card p-4 rounded-xl border border-border-card"
+            className="w-full text-left bg-bg-card p-4 rounded-full border border-border-card transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:border-action-secondary hover:shadow-neon-secondary"
           >
             {angle}
           </button>

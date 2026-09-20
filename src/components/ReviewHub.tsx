@@ -54,7 +54,7 @@ export default function ReviewHub({ onStartReview, onEditReview }: Props) {
         ))}
       </div>
 
-      <button onClick={onStartReview} className="w-full bg-action-primary text-action-text font-semibold py-3 rounded-xl flex items-center justify-center gap-2">
+      <button onClick={onStartReview} className="w-full bg-action-primary text-action-text font-semibold py-3 rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-neon-primary hover:shadow-neon-primary-hover border border-white/20 flex items-center justify-center gap-2">
         <Plus className="w-5 h-5" />
         เริ่มรีวิวใหม่
       </button>
